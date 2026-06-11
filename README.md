@@ -1,10 +1,25 @@
-### Portfolio Website
+## Portfolio Website
 
-**Description:**
-Designed and developed a responsive personal portfolio website to professionally showcase projects, technical skills, certifications, achievements, and contact details. Implemented modern UI elements, smooth navigation, dark mode functionality, and interactive animations to enhance user experience.
+A professional and responsive personal portfolio website built using HTML, CSS, and JavaScript.
+This project showcases a modern user interface with sections for About, Skills, Projects, Certifications, Resume, and Contact.
 
-**Technologies Used:**
-HTML5, CSS3, JavaScript
+### Features
 
-**Learnings:**
-Gained hands-on experience in responsive web design, frontend development, UI/UX principles, DOM manipulation, and creating interactive web interfaces using core web technologies.
+* Responsive design
+* Modern UI layout
+* Dark mode toggle
+* Typing animation
+* Projects showcase section
+* Certifications section
+* Resume download button
+* Contact form
+
+### Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Purpose
+
+This portfolio website was created to demonstrate frontend development skills, responsive web design, and modern UI styling using core web technologies.
