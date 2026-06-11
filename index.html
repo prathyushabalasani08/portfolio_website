@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      transition: 0.4s;
+
+      background: #f4f7fb;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 8%;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+      color: #0f172a;
+    }
+
+    .hero-text h3 {
+      color: #0284c7;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .hero-text p {
+      max-width: 550px;
+      margin-bottom: 30px;
+      color: #475569;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #0284c7;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      margin-right: 15px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: #0369a1;
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 300px;
+    }
+
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid #0284c7;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #0f172a;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+      color: #0284c7;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .contact-container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    form textarea {
+      resize: none;
+      height: 140px;
+    }
+
+    form button {
+      border: none;
+      cursor: pointer;
+    }
+
+    .dark-mode {
+      background: #0f172a;
+      color: white;
+    }
+
+    .dark-mode .about-box,
+    .dark-mode .skill-card,
+    .dark-mode .project-card,
+    .dark-mode .contact-container {
+      background: #1e293b;
+      color: white;
+    }
+
+    .dark-mode .hero-text h1,
+    .dark-mode .section-title h2,
+    .dark-mode .project-content h3 {
+      color: white;
+    }
+
+    .toggle-btn {
+      padding: 10px 18px;
+      border: none;
+      background: #38bdf8;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media(max-width: 768px) {
+      .hero-text h1 {
+        font-size: 38px;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Prathyusha</div>
+
+    <button class="toggle-btn" id="darkModeToggle">Dark Mode</button>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Hello, I'm Prathyusha</h1>
+      <h3 class="typing"></h3>
+
+      <p>
+        Aspiring Data Scientist with a passion for extracting valuable insights from data and leveraging AI to solve challenging problems.
+      </p>
+
+      <a href="https://drive.google.com/file/d/15OLEPDNg6PEOEyIIawPBC7fr558D6ZNH/view?usp=sharing" target="_blank" class="btn">Download Resume</a>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://m.media-amazon.com/images/I/31Cd9UQp6eL._AC_UF1000,1000_QL80_.jpg" alt="Profile Image">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+
+    <div class="about">
+      <div class="about-box">
+        <h3>Who Am I?</h3>
+        <p>
+         I am passionate about Data Science and enjoy working with data 
+         to discover patterns and solve real-world problems. I am always
+         eager to learn new tools and technologies to enhance my knowledge and skills.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Education</h3>
+        <p>
+          B.Tech Student<br>
+          Computer Science Engineering<br>
+          Interested in Data Science Development.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">
+      <h2>My Skills</h2>
+    </div>
+
+    <div class="skills-container">
+      <div class="skill-card">
+        <h3>Python</h3>
+        <p>Programming for data analysis, automation, and machine learning.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>SQL</h3>
+        <p>Managing and querying databases efficiently.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Machine Learning</h3>
+        <p>Building predictive models and intelligent solutions.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Data Visualization</h3>
+        <p>Creating interactive charts and dashboards using Power BI and Matplotlib.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-title">
+      <h2>Certifications</h2>
+    </div>
+
+    <div class="skills-container">
+      <div class="skill-card">
+        <h3>NPTEL R Software</h3>
+        <p>Successfully completed R Programming certification course.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>AWS Data Engineering </h3>
+        <p>
+Successfully completed AWS Data Engineering certification and learned cloud data processing, storage, and analytics.
+</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <h2>Projects</h2>
+    </div>
+
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop" alt="Project">
+
+        <div class="project-content">
+          <h3>Library Management System </h3>
+          <p>
+             Developed a simple systemto manage librarybooks, track issuedbooks, and maintaindue dates. 
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Project">
+
+        <div class="project-content">
+          <h3>RAG Defense Assistant</h3>
+          <p>
+            Developed an AI-powered RAG system for intelligent document retrieval and context-aware response generation using LangChain, FAISS, and LLMs.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Project">
+
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>
+            Professional personal portfolio website showcasing skills, certifications, and projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Me</h2>
+    </div>
+
+    <div class="contact-container">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message"></textarea>
+
+        <button class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Prathyusha | Data Scientist Portfolio</p>
+  </footer>
+
+  <script>
+    const text = ["Data Scientist", "Machine Learning Enthusiast", "Data Analyst"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    (function type() {
+      if (count === text.length) {
+        count = 0;
+      }
+
+      currentText = text[count];
+      letter = currentText.slice(0, ++index);
+
+      document.querySelector('.typing').textContent = letter;
+
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1200);
+      } else {
+        setTimeout(type, 120);
+      }
+    })();
+
+    const toggleBtn = document.getElementById('darkModeToggle');
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
